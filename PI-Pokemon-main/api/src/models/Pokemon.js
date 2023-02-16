@@ -26,6 +26,15 @@ module.exports = (sequelize) => {
     speed: {
       type: DataTypes.INTEGER
     },
+    height: {
+      type: DataTypes.INTEGER
+    },
+    weight: {
+      type: DataTypes.INTEGER
+    },
+    image:{
+      type:DataTypes.TEXT
+    },
   },
   {timestamps: false});
 };
