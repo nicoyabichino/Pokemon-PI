@@ -4,14 +4,17 @@ import {Route, BrowserRouter} from "react-router-dom";
 import './App.css';
 
 function App() {
+  
   return (
      <BrowserRouter>
     <div className="App">
+       <NavBar />
+      
       <Route exact path="/">
       <Landing></Landing>
       </Route>
-      <NavBar>
-
+      
+      
       <Route path="/home">
       <Home></Home>
       </Route>
@@ -23,10 +26,10 @@ function App() {
       <Route path="/create">
       <Form></Form>
       </Route>
-      </NavBar> 
+
     </div>
     </BrowserRouter>
-  );
-}
+  )
+};
 
 export default App;

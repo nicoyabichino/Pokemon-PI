@@ -1,7 +1,17 @@
-const Card = () => {
+import style from "./Card.module.css"
+
+const Card = (props) => {
     return (
-       <div>
-           <p>Este componente debe establecer un modelo de carta para cada pokemon</p>
+       <div className={style.card}>
+           <p>{props.name}</p>
+           <p>{props.hp}</p>
+           <p>{props.attack}</p>
+           <p>{props.defense}</p>
+           <p>{props.speed}</p>
+           <p>{props.height}</p>
+           <p>{props.weight}</p>
+           <p>{props.types}</p>
+           <p>{props.img}</p>
        </div>
     )   
    };
