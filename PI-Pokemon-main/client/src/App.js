@@ -1,5 +1,5 @@
 import {Home, Landing, Detail, Form} from "./views";
-import NavBar from "./components/NavBar/NavBar";
+// import NavBar from "./components/NavBar/NavBar";
 import {Route, BrowserRouter} from "react-router-dom";
 import './App.css';
 
@@ -8,7 +8,7 @@ function App() {
   return (
      <BrowserRouter>
     <div className="App">
-       <NavBar />
+       
       
       <Route exact path="/">
       <Landing></Landing>
