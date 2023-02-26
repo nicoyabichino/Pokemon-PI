@@ -1,49 +1,6 @@
 const {Pokemon,Type} = require("../db");
 const axios = require("axios").default;
 
-
-// const createPoke = async (req,res)=>{ // Ruta creación Pokemon
-//     const {name,hp,attack,defense,speed,types} = req.body;
-//     try {
-//         const newPokemon = await Pokemon.create({
-//             name,
-//             hp,
-//             attack,
-//             defense,
-//             speed
-//         })  
-//           const typeDb =  await Type.findAll({
-//             where:{ name: types} // busca si el tipo de pk que pasa por body coincida con del body
-//           })
-//         newPokemon.addTypes(typeDb) // agrega con el que coincide en la db
-    
-//         res.status(201).send('Pokemon creado correctamente')
-
-//     } catch (error) {
-//         console.log(error)
-//           res.status(404).send('Pokemon no creado exitosamente')
-//     }
-// }; 
-
-// const getPokeById = async (id, source) => {
-//    const poke = source === "api" ?
-//    (await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)).data :
-//    await Pokemon.findByPk(id)
-//    return poke;
-// };
-// const getPokeByName = () =>{
-
-//  };
-
-// const getAllPokes = async () => {
-// const dbPokes = await Pokemon.findAll();
-
-// const apiPokesRaw = (await axios.get(`https://pokeapi.co/api/v2/pokemon`)).data;
-// const apiPokes = cleanArray(apiPokesRaw);
-// const results = [...dbPokes,...apiPokes];
-// return results;
-// };
-
 const getPokeApi = async () =>{
    // guardo todas las caracteristicas de los pk 
    try {

@@ -1,18 +1,28 @@
 import style from "./Card.module.css"
 import React from "react";
+import { Link } from "react-router-dom";
+import{useDispatch} from "react-redux";
+import {getDetail} from '../../redux/actions';
+import Detail from "../../views/Detail/Detail";
+
+
 
 const Card = (props) => {
+    const dispatch = useDispatch();
+    function handleClick(e) {
+        e.preventDefault();
+        dispatch(getDetail(props.id), Detail);
+        
+    };
     return (
        <div className={style.card}>
-           <p>{props.name}</p>
-           <p>{props.hp}</p>
-           <p>{props.attack}</p>
-           <p>{props.defense}</p>
-           <p>{props.speed}</p>
-           <p>{props.height}</p>
-           <p>{props.weight}</p>
-           <p>{props.types}</p>
-           <p>{props.img}</p>
+           <button onClick={e => {handleClick(e)}}>{props.name}</button>
+        {props.types.length>1?
+        <div>
+           <p>{props.types[0] + ", " + props.types[1]}</p>
+           </div>: <p>{props.types}</p>
+             }
+           <img  src = {props.img} alt = "image not found" className="image"  width = '120px'    heigth = '100px' />
        </div>
     )   
    };

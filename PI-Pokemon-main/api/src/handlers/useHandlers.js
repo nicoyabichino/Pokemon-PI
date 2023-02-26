@@ -61,7 +61,7 @@ const getPokeHandler = async (req, res) => {
 // };
 
 const createPokeHandler = async (req,res)=>{ // Ruta creación Pokemon
-    const {name,image,hp,attack,defense,speed,height,weight,types} = req.body;
+    const {name,img,hp,attack,defense,speed,height,weight,types} = req.body;
     try {
         const newPokemon = await Pokemon.create({
             name,
@@ -70,7 +70,7 @@ const createPokeHandler = async (req,res)=>{ // Ruta creación Pokemon
             defense,
             height,
             weight,
-            image,
+            img,
             speed
         })  
         await dataTypePoke()
