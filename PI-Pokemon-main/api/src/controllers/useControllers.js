@@ -20,6 +20,7 @@ const getPokeApi = async () =>{
                weight: p.data.weight,
                img: p.data.sprites.other.home.front_default,
                types: p.data.types.map(t=>t.type.name),
+               createdDB: false
            }
            return allPoke;
        }))

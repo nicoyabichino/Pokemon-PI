@@ -1,36 +1,48 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getNamePokemons } from "../../redux/actions";
+import { useDispatch} from "react-redux";
+import { getPokemonName } from "../../redux/actions";
 
 
-export default function SearchBar(){
-    const dispatch = useDispatch()
-    const [name,setName] = useState("")
+// import pokebola from "../../imagenes/pokebola.png"
 
-    function handleInputChange(e){
+import style from "./SearchBar.module.css"
+
+export default function SearchBar({setCurrentPage}){
+
+    let dispatch = useDispatch()
+
+    const [name, setName] = useState("")
+
+    const handleInput = (e) => {
         e.preventDefault()
         setName(e.target.value)
+        console.log(name)
     }
 
-    function handleSubmit(e){
+    const handleClick = (e) => {
         e.preventDefault()
-        dispatch(getNamePokemons(name))
-
+        setCurrentPage(1)
+        dispatch(getPokemonName(name))
+        setName("")
     }
-    
-    return (
 
-               <div>
-
-                <input className="searchbar"
-                type = "text"
-                placeholder = "Buscar Pokemon..."
-                onChange={(e)=>handleInputChange(e)}
-                />
-                <button className="boton" type = "submit" onClick={(e) => handleSubmit(e)}>Buscar</button>
-                         
-              </div>
-
+    return(
+        <div className={style.div}>
+            <div className={style.all}>
+            <input type="text" placeholder="Search Pokemon..." value={name} className={style.input}
+            onChange={(e) => handleInput(e)}
+            onKeyPress={(e) => {
+                if(e.key === "Enter") {
+                    handleClick(e)}
+            }}
+            />
+            <button type="submit" className={style.button}
+            onClick={(e) => handleClick(e)}
+            >
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7huFKt2V6yLxpA66XLKh8Y1t8jae8Hzi70g&usqp=CAU" alt="pokebola" width="14px" height="14px"/> 
+            </button>
+            </div>
+        </div>
     )
-};
+}

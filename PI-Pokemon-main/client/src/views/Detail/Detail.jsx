@@ -1,43 +1,68 @@
 import React from "react";
-import {useEffect } from "react";
-import {Link} from "react-router-dom";
-import{useDispatch,useSelector} from "react-redux"
-import { getDetail } from "../../redux/actions";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useParams, useHistory } from "react-router-dom";
+import { getDetail, deletePokemon } from "../../redux/actions";
 
-export default function Detail(props){
-const dispatch = useDispatch()
+import style from "../Detail/Detail.module.css"
 
-useEffect(()=>{
-    dispatch(getDetail(props.id))
-},[dispatch])
+export default function Detail(){
+    let dispatch = useDispatch()
+    let params = useParams()
+    let history = useHistory()
 
-const pokeDetails = useSelector((state) => state.details)
+    
+    useEffect(() => {
+        dispatch(getDetail(params.id))
+    },[params.id, dispatch])
+    
+    const details = useSelector((state) => state.details)
 
-     return (
-            <div className="container">
-         {
-               pokeDetails.length>0?
-       <div>
-            <h1>{pokeDetails[0].name.charAt(0).toUpperCase() + pokeDetails[0].name.slice(1) }</h1>
-            <img src={pokeDetails[0].img?pokeDetails[0].img:pokeDetails[0].img}/>
-            <h3>Id:{pokeDetails[0].id} </h3>
-            <h3>Attack:{pokeDetails[0].attack}</h3>
-            <h3>Defense:{pokeDetails[0].defense}</h3>
-            <h3>Speed:{pokeDetails[0].speed}</h3>
-            <h3>Height:{pokeDetails[0].height}</h3>
-            <h3>Weight:{pokeDetails[0].weight}</h3>
-            <h3>Types:{!pokeDetails[0].createdInDb?pokeDetails[0].types+  " ": pokeDetails[0].types.map(el => el.name + (" "))}</h3> 
+    const destroy = (e) => {
+        e.preventDefault()
+        if(window.confirm("Do you really want to delete this Pokemon?")) {
+            dispatch(deletePokemon(params.id))
+            alert("The pokemon has been successfully removed")
+            history.push("/home")
+        }
+    }
 
-                </div>: <p> Loading...</p>
-             }
-          <Link to ='/home'>
-          <button className="volver"> Volver</button>
-          </Link>
+    return(
+        <div className={style.all}>
+        {
+            details.length > 0 ?
 
+            <div className={details[0].createdDB === true ? `${style.cardDB}` : `${style.card}`}>
+                <div className={style.divdelete}>
+                {
+                    details[0].createdDB === true ? <button onClick={(e) => destroy(e)} className={style.delete}>DELETE</button> : null
+                }
+                </div>
+                <h1 className={style.h1}>{details[0].name.charAt(0).toUpperCase() + details[0].name.slice(1)}</h1>
+                <div className={style.divtext}>
+                <div className={style.text}>
+                <p>ID: {details[0].id}</p>
+                <p>Attack: {details[0].attack}</p>
+                <p>Defense: {details[0].defense}</p>
+                <p>Speed: {details[0].speed}</p>
+                <p>Height: {details[0].height}</p>
+                <p>Weight: {details[0].weight}</p>
+                </div>
+                <div className={style.divimg}>
+                <img src={details[0].img} alt="pokemon" className={details[0].createdDB === true ? `${style.imgDB}` : `${style.img}`}/>
+                <p className={style.types}>Type/s: {details[0].types.map((t) => {
+                    return t + " "
+                })}</p>
+                </div>
+                </div>
+                <Link to="/home" className={style.link}><button className={style.button}>BACK HOME</button></Link>
             </div>
-
-     )
-
-
-
+        :
+        <div className={style.loading}>
+            <img src="https://static.wixstatic.com/media/662469_bb65c01462b343849e6c32896793e4bf~mv2.gif" alt="pokemon" className={style.pikachu}/>
+            <h3 className={style.texto}>Loading...</h3>    
+        </div>
+        }
+        </div>
+    )
 };

@@ -1,6 +1,6 @@
 import {Home, Landing, Detail, Form} from "./views";
-// import NavBar from "./components/NavBar/NavBar";
-import {Route, BrowserRouter} from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import {Route, BrowserRouter, Switch} from "react-router-dom";
 import './App.css';
 
 function App() {
@@ -8,24 +8,22 @@ function App() {
   return (
      <BrowserRouter>
     <div className="App">
-       
-      
-      <Route exact path="/">
-      <Landing></Landing>
-      </Route>
-      
+    <Switch>
+      <Route exact path="/" component={Landing} />
+      <Route path="/" component={NavBar} />
+    </Switch>
       
       <Route path="/home">
-      <Home></Home>
+      <Home/>
       </Route>
 
-      <Route path="/detail">
-      <Detail></Detail>
+      <Route path="/detail/:id">
+      <Detail/>
       </Route>
 
       <Route path="/create">
-      <Form></Form>
-      </Route>
+      <Form/>
+      </Route>  
 
     </div>
     </BrowserRouter>
