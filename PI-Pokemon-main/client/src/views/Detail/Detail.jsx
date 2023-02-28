@@ -10,14 +10,13 @@ export default function Detail(){
     let dispatch = useDispatch()
     let params = useParams()
     let history = useHistory()
-
     
     useEffect(() => {
         dispatch(getDetail(params.id))
     },[params.id, dispatch])
     
     const details = useSelector((state) => state.details)
-
+    
     const destroy = (e) => {
         e.preventDefault()
         if(window.confirm("Do you really want to delete this Pokemon?")) {
@@ -25,7 +24,7 @@ export default function Detail(){
             alert("The pokemon has been successfully removed")
             history.push("/home")
         }
-    }
+    };
 
     return(
         <div className={style.all}>

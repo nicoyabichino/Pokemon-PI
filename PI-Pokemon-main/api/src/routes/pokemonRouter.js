@@ -1,5 +1,5 @@
 const {Router} = require("express");
-const {getPokeHandler, getPokesHandler, createPokeHandler} = require("../handlers/useHandlers")
+const {getPokeHandler, getPokesHandler, createPokeHandler, deletePokeHandler} = require("../handlers/useHandlers")
 const pokemonRouter = Router();
 
 const validatePost = (req, res, next) => {
@@ -10,7 +10,7 @@ else if(!attack) {return res.status(404).send({error: "Falta agregar el poder de
 else if(!defense) {return res.status(404).send({error: "Falta agregar el nivel de defensa del Pokemon"})}
 else if(!speed) {return res.status(404).send({error: "Falta agregar la velocidad del Pokemon"})}
 else if(!types) {return res.status(404).send({error: "Falta agregar el tipo de Pokemon"})}
-else if(!img) {return res.status(404).send({error: "Falta agregar una imagen del Pokemon"})}
+// else if(!img) {return res.status(404).send({error: "Falta agregar una imagen del Pokemon"})}
 else if(!height) {return res.status(404).send({error: "Falta agregar el peso del Pokemon"})}
 else if(!weight) {return res.status(404).send({error: "Falta agregar la altura de Pokemon"})}
    else {
@@ -23,5 +23,6 @@ else if(!weight) {return res.status(404).send({error: "Falta agregar la altura d
 pokemonRouter.get("/", getPokesHandler);
 pokemonRouter.get("/:id", getPokeHandler);
 pokemonRouter.post("/", validatePost, createPokeHandler);
+pokemonRouter.delete("/:id",deletePokeHandler);
 
 module.exports = pokemonRouter;

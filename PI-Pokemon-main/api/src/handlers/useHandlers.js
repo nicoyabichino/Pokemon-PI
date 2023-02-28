@@ -107,9 +107,22 @@ const typesPokeHandler = async (req, res,)=>{
     }
  }; 
 
+ const deletePokeHandler = async (req, res) => {
+    try{
+        const {id} = req.params
+        const deleted = await Pokemon.destroy({
+            where : {id : id}
+        });
+        res.status(200).send(`${deleted} pokemon/s removed`)
+    }catch(err){
+        res.status(404).send(err.message)
+    }
+ }
+
 module.exports= {
     getPokeHandler,
     getPokesHandler,
     createPokeHandler,
-    typesPokeHandler
+    typesPokeHandler,
+    deletePokeHandler
 }

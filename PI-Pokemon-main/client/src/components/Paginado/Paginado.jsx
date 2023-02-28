@@ -3,18 +3,17 @@ import style from "./Paginado.module.css"
 
 export default function Paginado({pokemons, pokemonsPerPage, paginado, currentPage, setCurrentPage}){
     const pageNumbers = []
-
     for(let i = 1; i <= Math.ceil(pokemons.length/pokemonsPerPage); i++){
         pageNumbers.push(i)
-    }
+    };
 
     const handlePrev = () => {
         setCurrentPage(currentPage - 1)
-    }
+    };
 
     const handleNext = () => {
         setCurrentPage(currentPage + 1)
-    }
+    };
 
     return(
         <nav>

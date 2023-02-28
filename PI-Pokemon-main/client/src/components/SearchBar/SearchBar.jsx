@@ -17,7 +17,6 @@ export default function SearchBar({setCurrentPage}){
     const handleInput = (e) => {
         e.preventDefault()
         setName(e.target.value)
-        console.log(name)
     }
 
     const handleClick = (e) => {

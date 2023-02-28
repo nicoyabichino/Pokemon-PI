@@ -58,9 +58,9 @@ export default function Filter({setCurrentPage, setOrder}){
         <select onChange={(e) => handleFilterTypes(e)} className={style.select}>
             <option value="none">All types...</option>
             {
-                types && types.map((t) => {
+                types && types.map((e) => {
                     return (
-                        <option value={t.name}>{t.name.toUpperCase()}</option>
+                        <option value={e.name}>{e.name.toUpperCase()}</option>
                     )
                 })
             }

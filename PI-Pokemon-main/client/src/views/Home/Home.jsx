@@ -26,8 +26,7 @@ export default function Home(){
             },[dispatch])
         
             const [currentPage, setCurrentPage] = useState(1)
-            const [pokemonsPerPage, setPokemonsPerPage] = useState(12)
-            console.log(setPokemonsPerPage)
+            const [pokemonsPerPage] = useState(12)
     
     const lastPokemon = currentPage * pokemonsPerPage
     const firstPokemon = lastPokemon - pokemonsPerPage
@@ -96,43 +95,11 @@ export default function Home(){
                         setOrder={setOrder}
                         />
                     <div className={style.encontrado}>
-                         <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c319.png" alt="pokemon" className={style.pikachu}/>
+                         <img src="https://cdn.dribbble.com/users/568083/screenshots/15238806/pokemon_1.gif" alt="pokemon" className={style.pikachu}/>
+                         
                          <h1 className={style.texto}>Pokemon not found</h1>
                     </div>
                 </div>
                 )
             }
-        }
-       
-        // import Cards from "../../components/Cards/Cards";
-        // import React from "react";
-        // import NavBar from "../../components/NavBar/NavBar";
-        // import SearchBar from "../../components/SearchBar/SearchBar";
-        // import { useEffect} from "react";
-        // import {getPokemons} from '../../redux/actions';
-        // import{useDispatch} from "react-redux";
-        // import {Link} from "react-router-dom";
-        
-        // export default function Home () {
-        //     const dispatch = useDispatch();
-        //     //  const allPokemons = useSelector((state) => state.pokemons)
-        //     useEffect(() => {
-        //         dispatch(getPokemons())
-        //     },[dispatch])
-        
-        //     function handleClick(e) {
-        //         e.preventDefault();
-        //         dispatch(getPokemons());
-        //     }
-        
-        //     return (
-        //     <div>
-        //     <NavBar />
-        //     <SearchBar />
-        //             <Link to = "/create">Crear pokemon</Link>
-        //     <h1>Home principal</h1>
-        //     <button onClick={e => {handleClick(e)}}>Volver a cargar los pokemons</button>
-        //     <Cards></Cards>
-        //     </div>
-        //     )
-        // };
+        };

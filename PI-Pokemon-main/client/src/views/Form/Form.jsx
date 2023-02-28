@@ -81,7 +81,7 @@ export default function CreatePokemon(){
             ...input,
             [e.target.name] : e.target.value
         }))
-        console.log(input)
+        
     }
 
     const handleSelect = (e) => {
