@@ -115,12 +115,12 @@ export default function CreatePokemon(){
         if(input.types.length === 0){
             return alert("A Pokemon must have at least one type.")
          }
-        let data = {...input}
-        for(let i in data){
-            if(data[i] === ""){
-                data[i] = undefined
-            }
-        }
+         const data = {...input}
+        //  for(let i in data){
+        //      if(data[i] === ""){
+        //          data[i] = undefined
+        //         }
+        //     }
         dispatch(createPokemons(data))
         setInput({
             name : "",

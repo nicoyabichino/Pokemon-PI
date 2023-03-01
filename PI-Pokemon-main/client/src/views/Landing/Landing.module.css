@@ -1,0 +1,32 @@
+.div{
+    height:95vh;
+    background-image: url("https://media.tenor.com/T7TK5_jVeMoAAAAd/pokeball.gif");
+    background-repeat: no-repeat;
+    padding: 1.5rem;
+    display:block;
+    justify-content: center;
+    background-size: cover; 
+}
+
+.font{
+    color: blue;
+    background-color: aqua;
+};
+.button {
+    padding:0.3em 1.2em;
+    height: 110px;
+    width: 300px;
+    background-color: rgba(240, 240, 240, 0.26);
+    border: 1px solid #DFDFDF;
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    font-family:cursive;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 28px;
+    padding: 14px 22px;
+    transition: all .2s;
+    touch-action: manipulation;
+  }

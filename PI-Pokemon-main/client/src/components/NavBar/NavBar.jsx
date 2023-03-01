@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import style from "./NavBar.module.css"
+import { Link } from "react-router-dom";
+import style from "./NavBar.module.css";
 
 // import linkedin from "../../imagenes/linkedinn.png"
 // import github from "../../imagenes/githubn.png"

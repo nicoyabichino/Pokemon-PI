@@ -4,8 +4,6 @@ import { useDispatch} from "react-redux";
 import { getPokemonName } from "../../redux/actions";
 
 
-// import pokebola from "../../imagenes/pokebola.png"
-
 import style from "./SearchBar.module.css"
 
 export default function SearchBar({setCurrentPage}){
@@ -17,14 +15,14 @@ export default function SearchBar({setCurrentPage}){
     const handleInput = (e) => {
         e.preventDefault()
         setName(e.target.value)
-    }
+    };
 
     const handleClick = (e) => {
         e.preventDefault()
         setCurrentPage(1)
         dispatch(getPokemonName(name))
         setName("")
-    }
+    };
 
     return(
         <div className={style.div}>
@@ -44,4 +42,4 @@ export default function SearchBar({setCurrentPage}){
             </div>
         </div>
     )
-}
+};

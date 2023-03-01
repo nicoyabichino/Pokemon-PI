@@ -10,6 +10,7 @@ import Card from "../../components/Card/Card";
 import Filter from "../../components/Filter/Filter";
 import Paginado from "../../components/Paginado/Paginado";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import pikachu from "../../Images/pikachu.gif";
 
 export default function Home(){
     
@@ -28,8 +29,8 @@ export default function Home(){
             const [currentPage, setCurrentPage] = useState(1)
             const [pokemonsPerPage] = useState(12)
     
-    const lastPokemon = currentPage * pokemonsPerPage
-    const firstPokemon = lastPokemon - pokemonsPerPage
+    const lastPokemon = currentPage * pokemonsPerPage //12
+    const firstPokemon = lastPokemon - pokemonsPerPage //12- 
     const currentPokemons = pokemons.slice(firstPokemon,lastPokemon)
 
     const paginado = (pageNumber) => {
@@ -95,7 +96,7 @@ export default function Home(){
                         setOrder={setOrder}
                         />
                     <div className={style.encontrado}>
-                         <img src="https://cdn.dribbble.com/users/568083/screenshots/15238806/pokemon_1.gif" alt="pokemon" className={style.pikachu}/>
+                         <img src={pikachu} alt="pokemon" className={style.pikachu}/>
                          
                          <h1 className={style.texto}>Pokemon not found</h1>
                     </div>
