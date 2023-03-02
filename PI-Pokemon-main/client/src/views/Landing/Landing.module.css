@@ -1,5 +1,5 @@
 .div{
-    height:95vh;
+    height:100vh;
     background-image: url("https://media.tenor.com/T7TK5_jVeMoAAAAd/pokeball.gif");
     background-repeat: no-repeat;
     padding: 1.5rem;
@@ -9,24 +9,27 @@
 }
 
 .font{
-    color: blue;
-    background-color: aqua;
-};
+    height: 15rem;
+    color: rgb(244, 11, 11);
+    align-items: center;
+    font-family:'Times New Roman', Times, serif;
+    background-color:transparent;
+}
 .button {
-    padding:0.3em 1.2em;
-    height: 110px;
-    width: 300px;
-    background-color: rgba(240, 240, 240, 0.26);
-    border: 1px solid #DFDFDF;
-    border-radius: 16px;
-    box-sizing: border-box;
-    color: #000000;
-    cursor: pointer;
-    font-family:cursive;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 28px;
-    padding: 14px 22px;
-    transition: all .2s;
-    touch-action: manipulation;
-  }
+    height: 150px;
+    width: 25rem;
+    text-align: center;
+    border-radius: 10rem;
+    font-size: 0px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: rgb(241, 26, 26);
+    
+}
+
+.button:hover {
+    background-color: #e9d208; /* Green */
+    color: rgb(247, 242, 242);
+    box-shadow: 0 12px 16px 0 rgba(245, 4, 4, 0.24), 0 17px 50px 0 rgba(247, 5, 5, 0.19);
+    
+}

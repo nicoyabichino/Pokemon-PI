@@ -58,8 +58,7 @@ export default function Detail(){
             </div>
         :
         <div className={style.loading}>
-            <img src="https://static.wixstatic.com/media/662469_bb65c01462b343849e6c32896793e4bf~mv2.gif" alt="pokemon" className={style.pikachu}/>
-            <h3 className={style.texto}>Loading...</h3>    
+            <img src="https://static.wixstatic.com/media/662469_bb65c01462b343849e6c32896793e4bf~mv2.gif" alt="pokemon" className={style.pikachu}/>   
         </div>
         }
         </div>

@@ -48,7 +48,7 @@ export default function Home(){
                             setOrder={setOrder}
                             />
                             <div className={style.divloading}>
-                                <img src="https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif" alt="loading" className={style.loading}/>
+                                <img src="https://media.tenor.com/8sTMqGWjYAQAAAAC/ball-pokemon.gif" alt="loading" className={style.loading}/>
                             </div>
                       </div>
                     )
@@ -95,7 +95,7 @@ export default function Home(){
                         setCurrentPage={setCurrentPage}
                         setOrder={setOrder}
                         />
-                    <div className={style.encontrado}>
+                    <div className={style.notfind}>
                          <img src={pikachu} alt="pokemon" className={style.pikachu}/>
                          
                          <h1 className={style.texto}>Pokemon not found</h1>
