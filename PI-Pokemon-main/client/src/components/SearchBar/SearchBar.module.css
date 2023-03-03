@@ -1,0 +1,47 @@
+.div{
+    position: relative;
+}
+
+.all{
+    position: relative;
+    left: 40%;
+}
+
+
+.input{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 28px;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: none;
+    box-shadow: #023e8a 0px 1px 3px;
+    background: rgb(158, 158, 158);
+    transition: all 0.1s ease 0s;
+}
+
+.input:focus{
+    border: 10px solid #023e8a;
+    outline: #023e8a;
+}
+.input:hover{
+    border-color: #ccc;
+}
+
+.button{
+    min-height: 44.5px;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 16px;
+    background: #f80707;
+    box-shadow: #023e8a 0px 1px 3px;
+}
+
+.button:hover,
+  .button:active {
+    background-color: #fac906;
+    cursor: pointer;
+  }

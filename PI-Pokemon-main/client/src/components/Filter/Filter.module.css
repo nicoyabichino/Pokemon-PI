@@ -1,0 +1,44 @@
+.div{
+    position: relative;
+}
+
+.div2{
+    position: relative;
+    left: -10%;
+}
+
+.button{
+    margin-right: 10px;
+    min-height: 45px;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 16px;
+    color: #080808;
+    background-color: #f7ba03;
+    box-shadow: #023e8a  0px 1px 3px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+.select{
+    height: 30px;
+    width: 7%;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    margin-right: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #023e8a;
+    background-color: rgb(158, 158, 158);
+    box-shadow: #023e8a  0px 1px 3px;
+  }
+  
+.select:focus{
+    border: 2px solid #ade8f4;
+    outline: none;
+}

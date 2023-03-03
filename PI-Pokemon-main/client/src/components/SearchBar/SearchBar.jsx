@@ -37,7 +37,7 @@ export default function SearchBar({setCurrentPage}){
             <button type="submit" className={style.button}
             onClick={(e) => handleClick(e)}
             >
-             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7huFKt2V6yLxpA66XLKh8Y1t8jae8Hzi70g&usqp=CAU" alt="pokebola" width="14px" height="14px"/> 
+             <img src="https://cdn-icons-png.flaticon.com/512/188/188918.png" alt="pokebola" width="30rem" height="15rem"/> 
             </button>
             </div>
         </div>
